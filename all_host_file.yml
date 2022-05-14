@@ -1,0 +1,24 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+  - name: Make sure group wheel is not in the sudoers configuration
+    ansible.builtin.lineinfile:
+      path: /etc/hosts
+      backup: yes
+      state: present
+      line: '192.168.1.13    dm1'
+
+  - name: Make sure group wheel is not in the sudoers configuration
+    ansible.builtin.lineinfile:
+      path: /etc/hosts
+      backup: yes
+      state: present
+      line: '192.168.1.15    dm2'
+  - name: Make sure group wheel is not in the sudoers configuration
+    ansible.builtin.lineinfile:
+      path: /etc/hosts
+      backup: yes
+      state: present
+      line: '192.168.1.18   ansible'

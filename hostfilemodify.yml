@@ -1,0 +1,11 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+  - name: Make a copy hostfile in home dir
+    copy:
+      src: /etc/hosts
+      dest: /home/hosts
+      backup: yes
+      remote_src: yes

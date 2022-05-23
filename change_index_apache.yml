@@ -1,0 +1,32 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+  - name: Make sure group wheel is not in the sudoers configuration
+    ansible.builtin.lineinfile:
+      # path: /etc/hosts
+      # search_string: '127.0.0.1'
+      # line: 127.0.0.1 localhost
+      # owner: root
+      # group: root
+      # mode: '0644'
+      path: /var/www/html/index.html
+      backup: yes
+      regexp: 'Overview$'
+      state: present
+      line: ' Overview, for this Dnyaneshwar mogal'
+
+
+  # - name: Make sure group wheel is not in the sudoers configuration
+  #   ansible.builtin.lineinfile:
+  #     path: /var/www/html/index.html
+  #     backup: yes
+  #     state: present
+  #     line: ' '
+  # - name: Make sure group wheel is not in the sudoers configuration
+  #   ansible.builtin.lineinfile:
+  #     path: /var/www/html/index.html
+  #     backup: yes
+  #     state: present
+  #     line: ''

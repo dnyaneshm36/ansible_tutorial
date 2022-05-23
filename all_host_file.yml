@@ -8,17 +8,20 @@
       path: /etc/hosts
       backup: yes
       state: present
-      line: '192.168.1.13    dm1'
+      line: '192.168.1.16    dm1'
+      regexp: '192\.168\.1\.8'
 
   - name: Make sure group wheel is not in the sudoers configuration
     ansible.builtin.lineinfile:
       path: /etc/hosts
       backup: yes
       state: present
-      line: '192.168.1.15    dm2'
+      regexp: 'dm2$'
+      line: '192.168.1.13    dm2'
   - name: Make sure group wheel is not in the sudoers configuration
     ansible.builtin.lineinfile:
       path: /etc/hosts
       backup: yes
       state: present
-      line: '192.168.1.18   ansible'
+      regexp: '^192\.168\.1\.10'
+      line: '192.168.1.15   ansible'

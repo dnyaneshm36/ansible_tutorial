@@ -1,0 +1,5 @@
+---
+    - hosts: all
+      tasks:
+      - name: "ansible server reachable to host and getting responce." 
+        ping:

@@ -1,8 +1,10 @@
 ---
 - hosts: all
+  # become: true
+  # become_user: root
   tasks:
-  - name: "Read a file content"
-    shell: "ping  -c 1 -w 2 $HOSTNAME | grep  received"
+  - name: "Runing the CMD. "
+    shell: "echo 'hello!!\n world of ansible.\n Well done dnyanesh'"
     args:
       executable: /usr/bin/bash
     register: file_content
